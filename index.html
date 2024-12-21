@@ -116,36 +116,43 @@
     
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h1><i class="fas fa-envelope"></i> Contact</h1>
-            <form action="send_email.php" method="POST" class="contact-form" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="Nama" required>
-                <input type="email" name="email" placeholder=" Email" required>
-                <textarea name="message" placeholder="Mau bikin apa " required></textarea>
+<section id="contact" class="section">
+    <div class="container">
+        <h1><i class="fas fa-envelope"></i> Contact</h1>
+        <!-- Ganti action ke URL Formspree -->
+        <form action="https://formspree.io/f/mjkkbgvn" method="POST" class="contact-form" enctype="multipart/form-data">
+            <!-- Input Name -->
+            <input type="text" name="name" placeholder="Nama" required>
+            <!-- Input Email -->
+            <input type="email" name="email" placeholder="Email" required>
+            <!-- Input Message -->
+            <textarea name="message" placeholder="Mau bikin apa?" required></textarea>
+
+            <!-- Pilih Teknologi -->
+            <label for="technology">Pilih pake apa</label>
+            <select name="technology" id="technology" required>
+                <option value="">Pilih pake apa</option>
+                <option value="html_css_js">HTML, CSS, JS</option>
+                <option value="php_css_js">PHP, CSS, JS</option>
+                <option value="codeigniter_4">CodeIgniter 4</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Input untuk teknologi lainnya -->
+            <p>Disini kirim struktur databases atau fotonya bias ngerti</p>
+            <div id="other-technology-div" style="display: none;">
+                <input type="text" name="other_technology" placeholder="Please specify the technology">
+            </div>
+
+            <!-- Input File -->
+            <input type="file" name="file" accept="image/*, .pdf, .docx" id="file">
             
-                <label for="technology">pilih pake apa</label>
-                <select name="technology" id="technology" required>
-                    <option value="">pilih pake apa</option>
-                    <option value="html_css_js">HTML, CSS, JS</option>
-                    <option value="php_css_js">PHP, CSS, JS</option>
-                    <option value="codeigniter_4">CodeIgniter 4</option>
-                    <option value="other">Other</option>
-                </select>
-            
-                <!-- Input field for other technology -->
-                 <p>disini kirim struktur databases atau fotonya bias ngerti</p>
-                <div id="other-technology-div" style="display: none;">
-                    <input type="text" name="other_technology" placeholder="Please specify the technology">
-                </div>
-            
-                <input type="file" name="file" accept="image/*, .pdf, .docx" id="file">
-                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-            </form>
-            
-        </div>
-    </section>
-    
+            <!-- Tombol Kirim -->
+            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">
